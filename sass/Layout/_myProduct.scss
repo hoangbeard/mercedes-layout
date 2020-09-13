@@ -1,0 +1,106 @@
+.myProduct {
+    background-color: $color-black-2;
+
+    .nav {
+        border: none;
+        padding-bottom: $pd-1 !important;
+
+        .nav-item {
+            .nav-link {
+                @include styleText($color-white-0, $fs-0, $fw-normal);
+                background-color: $color-trans;
+                border: none;
+
+                .nav-link__content {
+                    padding-bottom: $pd-1;
+                }
+
+                &:hover {
+                    border: none;
+                    color: $color-blue-0;
+                }
+            }
+
+            .nav-link.active {
+                color: $color-blue-0;
+                border: none;
+
+                .nav-link__content {
+                    border-bottom: 1px solid $color-blue-0;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        .show__mores {
+            .btnShowMores {
+                &:focus {
+                    outline: none;
+
+                }
+            }
+        }
+
+        .product__item {
+            position: relative;
+            overflow: hidden;
+
+            a {
+                text-decoration: none;
+            }
+
+            .product__overlay {
+                position: absolute;
+                left: 0;
+                bottom: -75px;
+                width: 100%;
+                height: 120px;
+                background-color: $color-black-1;
+                padding: $pd-1 $pd-3;
+                transition: all 0.5s;
+
+                h3 {
+                    @include styleText($color-white-0, $fs-2, $fw-normal);
+                    margin: 0;
+                }
+
+                p {
+                    @include styleText($color-white-0, $fs-0, $fw-normal);
+                    opacity: 0;
+                    transition: all 0.5s;
+                    margin: 0;
+                }
+            }
+
+            &:hover {
+                .product__overlay {
+                    bottom: 0;
+
+                    p {
+                        @include styleText($color-white-0, $fs-0, $fw-normal);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// / responsive
+.myProduct {
+    .tab-content {
+        .product__item {
+            .product__overlay {
+                @include responsive ("medium") {
+                    position: unset;
+                    height: 80px;
+
+                    p {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

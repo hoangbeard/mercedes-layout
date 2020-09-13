@@ -1,0 +1,47 @@
+.myMenuFooter {
+    background-color: $color-black-2;
+    padding: 0 $fs-2;
+
+    .myMenuFooter__content {
+        padding: 0 $fs-2;
+
+        .menu__section {
+            padding: 0;
+
+            .menu__title {
+                @include styleText($color-white-0, $fs-3, $fw-bold);
+            }
+
+            hr {
+                position: relative;
+                height: 1px;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    left: 0;
+                    right: 0;
+                    height: 1px;
+                    width: 100%;
+                    background-color: $color-black-5;
+                }
+            }
+
+            .menu__item {
+                list-style-type: none;
+                @include styleText($color-gray-0, $fs-0, $fw-normal);
+
+                .menu__link {
+                    text-decoration: none;
+                    color: $color-gray-0;
+
+                    &:hover {
+                        color: $color-blue-0;
+                    }
+                }
+            }
+        }
+    }
+
+}

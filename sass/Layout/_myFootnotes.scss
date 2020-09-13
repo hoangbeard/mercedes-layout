@@ -1,0 +1,9 @@
+.myFootnotes {
+    background-color: $color-black-2;
+    @include styleText($color-white-0, $fs-0, $fw-normal);
+    padding: $pd-3 $pd-2;
+
+    .footnotes__detail {
+        padding-bottom: $pd-3;
+    }
+}

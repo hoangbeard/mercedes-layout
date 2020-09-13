@@ -1,0 +1,19 @@
+@mixin styleText($color, $fontSize, $fontWeight) {
+    color: $color;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+@mixin responsive($screen){
+    @if (map-has-key($map: $breakpoints, $key: $screen)) {
+        // nếu tên màn hình đúng thì lấy giá trị
+        // lấy kích thước màn hình dựa vào tên màn hình
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (max-width: $value){
+            @content;
+        }
+    }
+    @else {
+        @warn "Màn hình không đúng";
+    }
+}

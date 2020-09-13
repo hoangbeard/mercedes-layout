@@ -1,0 +1,87 @@
+.myFooter {
+    background-color: $color-black-2;
+    padding: 0 $pd-2 $pd-2 $pd-3;
+
+    .footer__title {
+        @include styleText($color-gray-0, $fs-0, $fw-normal);
+        padding-bottom: $pd-2;
+
+        a {
+            text-decoration: none;
+            color: $color-white-0;
+
+            &:hover {
+                color: $color-blue-0;
+            }
+        }
+    }
+
+    .footer__bottom {
+        .footer__bottom__left {
+            color: $color-blue-0;
+            cursor: pointer;
+
+            span:nth-child(3) {
+                color: $color-white-0;
+            }
+        }
+
+        .footer__bottom__right {
+            ul {
+                list-style-type: none;
+
+                a {
+                    text-decoration: none;
+                    color: $color-gray-0;
+
+                    &:hover {
+                        color: $color-blue-0;
+                    }
+                }
+            }
+
+
+        }
+    }
+
+}
+
+// Responsive
+
+.myFooter {
+    .footer__title {
+        a {
+            @include responsive ("medium") {
+                display: block;
+            }
+            @include responsive ("small") {
+                display: inline;
+            }
+        }
+    }
+
+    .footer__bottom {
+        .footer__bottom__left {
+            @include responsive ("medium") {
+                text-align: center;
+            }
+        }
+    }
+
+    .footer__bottom__right {
+        @include responsive ("large") {
+            display: block !important;
+        }
+
+        .footer__bottom__right-a ul,
+        .footer__bottom__right-b ul {
+            @include responsive ("large") {
+                justify-content: flex-start !important;
+
+                li {
+                    padding-right: $pd-3;
+                }
+            }
+        }
+    }
+}

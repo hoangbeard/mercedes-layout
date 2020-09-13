@@ -1,0 +1,74 @@
+.owl-prev,
+.owl-next {
+    position: absolute;
+    left: 3%;
+    top: 35%;
+    width: 45px;
+    height: 45px;
+    background-color: $color-trans !important;
+
+    span {
+        @include styleText($color-white-1, $fs-7, $fw-normal);
+        line-height: 45px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        span {
+            color: $color-gray-0;
+        }
+    }
+}
+
+.owl-next {
+    left: unset;
+    right: 3%;
+}
+
+// back to top
+#button {
+    display: inline-block;
+    color: $color-gray-0;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    right: 35px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+
+    &:hover {
+        cursor: pointer;
+        color: $color-blue-0;
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        background: transparent;
+        border: none;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+// responsive
+#button {
+    @include responsive ("medium") {
+        bottom: unset;
+        bottom: 90px;
+    }
+}
+
+.owl-prev,
+.owl-next {
+    @include responsive ("medium") {
+        top: 15%;
+    }
+}

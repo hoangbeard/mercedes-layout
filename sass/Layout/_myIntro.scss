@@ -1,0 +1,49 @@
+.myIntro {
+    background-color: $color-black-2;
+
+    .intro__content {
+        padding: $pd-3 $pd-5;
+        width: 70%;
+
+        h3 {
+            @include styleText($color-white-0, $fs-4, $fw-bold-0);
+        }
+
+        p {
+            @include styleText($color-white-0, $fs-0, $fw-normal);
+        }
+
+        a {
+            color: $color-blue-0;
+
+            &:hover {
+                color: $color-blue-1;
+            }
+        }
+
+        button {
+            border-radius: 0;
+            background-color: $color-blue-0;
+            margin-top: $pd-3;
+
+            &:hover {
+                background-color: $color-blue-1;
+            }
+        }
+    }
+}
+
+// responsive
+.myIntro {
+    .intro__content {
+        @include responsive ("medium") {
+            width: 100%;
+        }
+
+        button {
+            @include responsive ("medium") {
+                width: 100%;
+            }
+        }
+    }
+}

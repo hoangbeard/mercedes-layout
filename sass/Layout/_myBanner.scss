@@ -1,0 +1,35 @@
+.myBanner {
+    background-color: $color-black-2;
+    padding: $pd-3 $pd-5;
+
+    .banner__content {
+        .banner__item {
+            position: relative;
+            padding: $pd-0;
+
+            .banner__link {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    display: block;
+                    left: 5px;
+                    right: 5px;
+                    bottom: 0;
+                    height: 0px;
+                    background-color: $color-blue-0;
+                    opacity: 0;
+                    transition: all .3s;
+                }
+            }
+            &:hover{
+                .banner__link {
+                    &::after {
+                        height: 7px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+}

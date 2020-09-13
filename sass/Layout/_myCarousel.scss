@@ -1,0 +1,55 @@
+.myCarousel {
+    background-color: $color-black-2;
+
+    .carousel__content {
+        .owl-nav {
+            margin: 0;
+        }
+
+        .carousel__item {
+            position: relative;
+
+            .carousel__overlay {
+                position: absolute;
+                top: 10%;
+                left: 10%;
+                width: 50%;
+                height: 50%;
+
+                h3 {
+                    @include styleText($color-white-0, $fs-6, $fw-normal);
+                }
+
+                p {
+                    margin-top: $mg-2;
+                    @include styleText($color-white-0, $fs-2, $fw-normal);
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+.myCarousel {
+    .carousel__content {
+        @include responsive ("medium") {
+            background-color: $color-white-0;
+        }
+
+        .carousel__item {
+            .carousel__overlay {
+                @include responsive ("medium") {
+                    position: unset;
+                    padding: $pd-2;
+
+                    h3 {
+                        @include styleText($color-black-2, $fs-6, $fw-normal);
+                    }
+                    p{
+                        color: $color-black-2;
+                    }
+                }
+            }
+        }
+    }
+}

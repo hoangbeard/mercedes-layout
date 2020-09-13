@@ -1,0 +1,15 @@
+.line {
+    position: relative;
+    height: 1px;
+
+    &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        left: 0;
+        right: 0;
+        height: 1px;
+        width: 100%;
+        background-color: $color-black-5;
+    }
+}

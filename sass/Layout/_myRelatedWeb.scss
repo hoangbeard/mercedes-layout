@@ -1,0 +1,24 @@
+.myRelatedWeb {
+    background-color: $color-black-2;
+    @include styleText($color-white-0, $fs-0, $fw-normal);
+    padding: $pd-3 $pd-2;
+    .myRelatedWeb__content {
+        padding: $pd-5 $pd-2;
+        img{
+            height: 28px;
+            width: 100%;
+        }
+    }
+}
+
+// responsive
+
+.myRelatedWeb {
+    .myRelatedWeb__content {
+        .myRelatedWeb__item{
+            @include responsive ("medium") {
+                margin-bottom: $mg-5;
+            }
+        }
+    }
+}

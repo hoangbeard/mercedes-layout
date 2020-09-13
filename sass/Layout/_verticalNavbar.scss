@@ -1,0 +1,55 @@
+.vertical__navbar {
+    transition: all 0.5s;
+
+    nav {
+        position: fixed;
+        z-index: 10;
+        top: 150px;
+        right: -200px;
+        padding: 0;
+
+        ul {
+            width: 240px;
+            list-style-type: none;
+            margin: 0;
+
+            li {
+                background-color: $color-black-2;
+                margin-bottom: 1px;
+                height: 40px;
+                transition: all 0.5s;
+
+                a {
+                    @include styleText($color-gray-0, $fs-2, $fw-normal);
+                    text-decoration: none;
+                    padding: $pd-0 $pd-1;
+
+                    .subMenu {
+                        padding-right: $pd-2;
+                        line-height: 40px;
+                    }
+
+                    &:hover {
+                        color: $color-blue-0;
+                    }
+                }
+
+                &:hover {
+                    transform: translateX(-83%);
+                }
+            }
+        }
+    }
+}
+
+.OpacityHidden{
+    opacity: 0;
+}
+
+// responsive
+
+.vertical__navbar {
+    @include responsive ("medium") {
+        display: none !important;
+    }
+}

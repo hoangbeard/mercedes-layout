@@ -1,0 +1,141 @@
+.myHeader {
+    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -100%;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: $color-black-2;
+
+    .header__content {
+        padding: 0 $pd-2;
+
+        .nav__top {
+            ul {
+                list-style-type: none;
+                margin-bottom: 0;
+                padding: 5px 0;
+
+                li {
+                    padding-left: $pd-3;
+
+                    a {
+                        text-decoration: none;
+                        @include styleText($color-white-0, $fs-0, $fw-normal);
+
+                        &:hover {
+                            color: $color-blue-0;
+                        }
+
+                        i {
+                            padding-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav__bottom {
+            #searchHidden {
+                &:hover {
+                    color: $color-blue-0 !important;
+                }
+            }
+
+            .navbar-brand {
+                margin-right: 100px;
+
+                img:nth-child(2) {
+                    padding: 0 $pd-5;
+                }
+            }
+
+            .navbar-collapse {
+                position: relative;
+                z-index: 1;
+                transition: all 0.5s;
+
+                .navbar-nav {
+                    width: 100%;
+                    justify-content: space-between;
+
+                    .nav-item {
+                        .nav-link {
+                            @include styleText($color-white-0, $fs-0, $fw-normal);
+
+                            &:hover {
+                                color: $color-blue-0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// disable on scroll
+body.noscroll {
+    overflow: hidden;
+    transition: all 1s;
+}
+
+//===show nav on scroll up 
+.show-nav {
+    top: 0;
+    transition: .5s ease-in-out .5s;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+    opacity: 1;
+}
+
+// responsive
+
+.myHeader {
+    .navbar {
+        .navbar-collapse {
+            .navbar-nav {
+                .nav-item {
+                    @include responsive ("extra-large") {
+                        text-align: center;
+                        height: 50px;
+                    }
+
+                    .nav-link {
+                        @include responsive ("extra-large") {
+                            font-size: $fs-3 - 2 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.myHeader {
+    .header__content {
+        .nav__top {
+            @include responsive ("medium") {
+                li:nth-child(2) {
+                    display: none;
+                }
+
+                li:nth-child(3) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.myHeader{
+    .header__content{
+        .nav__bottom{
+            .navbar-brand{
+                @include responsive ("small"){
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

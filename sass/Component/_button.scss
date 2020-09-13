@@ -1,0 +1,23 @@
+.btnShowMores {
+    border: 1px solid $color-black-3;
+    @include styleText($color-gray-0, $fs-1 - 2, $fw-normal);
+    line-height: 20px;
+    padding: ($pd-0 + 1) $pd-2;
+    background: linear-gradient($color-black-4, $color-black-3);
+
+    &:hover {
+        color: $color-white-1;
+    }
+}
+
+.btnLearnMore {
+    border: 1px solid $color-black-3;
+    @include styleText($color-gray-0, $fs-1 - 2, $fw-normal);
+    background: $color-black-5;
+    padding: ($pd-0 + 1) $pd-2;
+
+    &:hover {
+        background: $color-black-9;
+        border: 1px solid $color-black-9;
+    }
+}

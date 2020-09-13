@@ -1,0 +1,26 @@
+.mySearch{
+    background-color: $color-black-10;
+    .search__content{
+        .form-group{
+            position: relative;
+            padding: $pd-3 $pd-5;
+            margin: 0;
+            .form-control{
+                border-radius: 0;
+                background-clip: border-box;
+                height: 40px;
+                &:focus{
+                    outline: none;
+                    border-color: transparent;
+                    box-shadow: none;
+                }
+            }
+            .search__icon{
+                position: absolute;
+                top: 40%;
+                right: 70px;
+                cursor: pointer;
+            }
+        }
+    }
+}

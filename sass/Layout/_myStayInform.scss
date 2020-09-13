@@ -1,0 +1,139 @@
+.myStayInform {
+    background-color: $color-black-2;
+    padding: $pd-3 $pd-2;
+
+    h3 {
+        @include styleText($color-white-0, $fs-3, $fw-normal);
+        // padding-left: $pd-2;
+    }
+
+    .myStayInform__content {
+        // padding: $pd-2;
+
+        .stayinform__signup {
+            padding: 0;
+            p {
+                @include styleText($color-gray-0, $fs-0, $fw-normal);
+            }
+
+            .input-group {
+                width: 75%;
+
+                .form-control {
+                    background: $color-black-8;
+                    border: 1px solid #2a2a2a;
+                }
+
+                .input-group-append {
+                    .input-group-text {
+                        background: linear-gradient($color-black-6, $color-black-7);
+                        border-top-color: #242424;
+                        border-bottom-color: #0b0b0b;
+                        border-left-color: #2a2a2a;
+                        border-right-color: #0b0b0b;
+                        border-style: solid;
+                        border-radius: 0;
+                        border-width: 1px;
+                    }
+
+                    a {
+                        @include styleText($color-gray-0, $fs-0, $fw-normal);
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $color-blue-0;
+                        }
+                    }
+                }
+            }
+
+            .confirm__content {
+                display: flex;
+                position: relative;
+                align-items: center;
+                cursor: pointer;
+                color: $color-gray-0;
+                padding: 0;
+
+                .confirm__checkbox {
+                    position: absolute;
+                    left: 0;
+                    top: 5%;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 15px;
+                    width: 15px;
+                    z-index: 1;
+
+                    &:checked+.checkmark {
+                        background-color: $color-black-3;
+                    }
+
+                    &:checked+.checkmark::after {
+                        display: block;
+                    }
+                }
+
+                .checkmark {
+                    position: absolute;
+                    left: 0;
+                    top: 5%;
+                    height: 15px;
+                    width: 15px;
+                    background-color: $color-black-3;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                        left: 5px;
+                        top: 3px;
+                        width: 5px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $color-white-0;
+
+                    &:hover {
+                        color: $color-blue-0;
+                    }
+                }
+            }
+        }
+
+        .stayinform__social {
+            p {
+                @include styleText($color-gray-0, $fs-0, $fw-normal);
+            }
+
+            .social__list {
+                @include styleText($color-gray-0, $fs-3, $fw-normal);
+
+                i {
+                    &:hover {
+                        color: $color-blue-0;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// responsive
+
+.myStayInform {
+    .myStayInform__content {
+        @include responsive ("extra-large") {
+            display: block !important;
+        }
+    }
+}
