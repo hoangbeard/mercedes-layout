@@ -237,6 +237,12 @@ body.noscroll {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .myHeader .header__content .nav__bottom .navbar-brand {
+    margin-right: 0;
+  }
+}
+
 .myCarousel {
   background-color: #000;
 }
